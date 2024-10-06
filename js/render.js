@@ -1,5 +1,16 @@
 import dishesList from './dataBase.js';
 
+// Запрос разрешения на уведомления
+if (Notification.permission !== 'granted') {
+  Notification.requestPermission().then(permission => {
+      if (permission === 'granted') {
+          // Уведомление о том, что вибрация будет использоваться
+          new Notification('Разрешение на вибрацию получено!');
+      } else {
+          console.warn('Разрешение на уведомления не получено.');
+      }
+  });
+}
 
 // Получение текущего языка страницы
 const lang = document.documentElement.lang;
