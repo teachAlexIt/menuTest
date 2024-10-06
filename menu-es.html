@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İskenderbeyi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/0dfb09cd7e.js" crossorigin="anonymous" defer></script>
+  <script type="module" src="./js/render.js" defer></script>
+  <script src="./js/form.js" defer></script>
+</head>
+
+<body class="menu active_no">
+  <button class="feedBack-button"><i class="fa-solid fa-comment-dots"></i></button>
+  <div class="feedBack-bloсk">
+    <h3 id="leaveReview"></h3>
+    <form id="formAction"
+      action=""
+      target="form-set" method="post"> 
+      <div class="form-wrapper" id="thankYou">
+      </div>
+      <iframe name="form-set"></iframe>
+      <div class="Rating">
+        <div class="reviews-itom">
+          <p id="food"></p>
+          <div id="footStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="reviews-itom">
+          <p id="service"></p>
+          <div id="serviceStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+      </div>
+      <input id="serviceRating" type="text" name="">
+      <input id="footRating" type="text" name="">
+      <textarea name="" id="comment" required></textarea>
+      <button type="submit" class="feedBack-bloсk__button" id="send">
+      </button>
+    </form>
+
+
+  </div>
+  <nav>
+    <div class="container">
+      <div class="nav__elements">
+        <div class="nav__links">
+          <a href="./menu-ru.html">RU</a>
+          <hr>
+          <a href="./menu-en.html">EN</a>
+          <hr>
+          <a href="./menu-tr.html">TR</a>
+        </div>
+        <a href="./index.html" class="nav__logo">
+          <img src="./img/navLogo.png" alt="">
+        </a>
+        <button class="basket"><i class="fa-solid fa-basket-shopping"></i></button>
+        <button class="basket-clouse">
+          <i class="fa-solid fa-reply"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1 id="menu"></h1>
+    <div class="categories-list" id="categoriesList"> <!--JS--> </div>
+    <div class="dishes-list"></div>
+
+    <div class="basket-box">
+      <h3 id="yourOrder"></h3>
+      <div class="basket-box__list basket-list">
+        
+      </div>
+      <div class="basket-box__total-price" id="totalCost">
+       
+      </div>
+      <button class="button-order" id="sendOrder"></button>
+    </div>
+
+    <div class="annonce-block">
+      <h2 id="announcement"></h2>
+      <p id="announcementText"></p>
+      <button id="annonce-block-clouse">Ok</button>
+    </div>
+  </main>
+  <footer>
+    <a  href="https://maps.app.goo.gl/wwp8UvQyTYECLtF17" target="_blank" id="address"></a>
+    <a href="tel:9024224440000" id="tel"></a>
+    <a href="https://www.tripadvisor.ru/Restaurant_Review-g297962-d15010355-Reviews-Iskenderbey_i-Antalya_Turkish_Mediterranean_Coast.html"
+    target="_blank" rel="noopener noreferrer" id="leaveReviewLink"></a>
+  </footer>
+</body>
+
+</html>
