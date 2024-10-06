@@ -1,16 +1,6 @@
 import dishesList from './dataBase.js';
 
-// Запрос разрешения на уведомления
-if (Notification.permission !== 'granted') {
-  Notification.requestPermission().then(permission => {
-      if (permission === 'granted') {
-          // Уведомление о том, что вибрация будет использоваться
-          new Notification('Разрешение на вибрацию получено!');
-      } else {
-          console.warn('Разрешение на уведомления не получено.');
-      }
-  });
-}
+
 
 // Получение текущего языка страницы
 const lang = document.documentElement.lang;
@@ -161,7 +151,9 @@ function addContent() {
 }
 addContent();
 
-
+document.addEventListener('dblclick', (event) => {
+  event.preventDefault(); // Запрещаем стандартное поведение
+});
 
 // Получение элемента, в который будут добавляться кнопки категорий
 const categoriesDiv = document.getElementById('categoriesList');
@@ -263,19 +255,11 @@ function renderDishes(dishes, categoryName) {
       dishCard.querySelectorAll('.portion-plus').forEach(button => {
         button.addEventListener('click', () => {
           updatePortion(button, 'plus', dish, categoryName);
-          // Вибро отклик при нажатии на кнопку увеличения порции
-          if (navigator.vibrate) {
-            navigator.vibrate(100); // Вибрация на 100 миллисекунд
-          }
         });
       });
       dishCard.querySelectorAll('.portion-minus').forEach(button => {
         button.addEventListener('click', () => {
           updatePortion(button, 'minus', dish, categoryName);
-          // Вибро отклик при нажатии на кнопку уменьшения порции
-          if (navigator.vibrate) {
-            navigator.vibrate(100); // Вибрация на 100 миллисекунд
-          }
         });
       });
 
